@@ -16,7 +16,8 @@ FROM python:3.13-slim AS runtime
 WORKDIR /app
 
 ENV PYTHONDONTWRITEBYTECODE=1 \
-    PYTHONUNBUFFERED=1
+    PYTHONUNBUFFERED=1 \
+    PYTHONPATH=/app
 
 # Copy venv from builder
 COPY --from=builder /app/.venv /app/.venv
